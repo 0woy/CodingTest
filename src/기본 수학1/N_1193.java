@@ -14,7 +14,7 @@ public class N_1193 {
         int range = 1;
         int count = 1;
         int prev = 0;
-        int numerator, denominator;
+        int numerator, denominator; // 분자 / 분모
         if (N == 1) {
             numerator = 1;
             denominator = 1;
