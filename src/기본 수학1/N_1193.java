@@ -28,15 +28,16 @@ public class N_1193 {
                     break;
                 }
             }
-        }
-        int pos = N - prev;
 
-        if (count % 2 == 0) { // 짝수
-            numerator = pos;
-            denominator = count - (pos - 1);
-        } else {
-            numerator = count - (pos - 1);
-            denominator = pos;
+            int pos = N - prev;
+
+            if (count % 2 == 0) { // 짝수
+                numerator = pos;
+                denominator = count - (pos - 1);
+            } else {
+                numerator = count - (pos - 1);
+                denominator = pos;
+            }
         }
         System.out.println(numerator + "/" + denominator);
     }
