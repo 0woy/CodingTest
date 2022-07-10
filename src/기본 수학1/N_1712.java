@@ -14,7 +14,7 @@ public class N_1712 {
         int C = Integer.parseInt(st.nextToken());
 
         int ans = 0;
-        if (C < B)
+        if (C <= B)
             ans = -1;
         else {
             ans = ((A / (C - B)) + 1);
