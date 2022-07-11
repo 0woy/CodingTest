@@ -19,8 +19,6 @@ public class N_10250 {
             n = Integer.parseInt(st.nextToken());
 
             if (n % h != 0) {
-                // floor[i] = (n / h) + 1;
-                // num[i] = n % h;
                 floor[i] = n % h;
                 num[i] = (n / h) + 1;
             } else if (n % h == 0) {
