@@ -6,7 +6,6 @@ import java.util.StringTokenizer;
 public class N_10250 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
         int test_case = Integer.parseInt(br.readLine());
         int h, w, n;
         int[] num = new int[test_case];
@@ -25,11 +24,9 @@ public class N_10250 {
                 floor[i] = h;
                 num[i] = n / h;
             }
-
         }
         for (int i = 0; i < test_case; i++) {
             System.out.println(floor[i] * 100 + num[i]);
         }
-
     }
 }
