@@ -1,8 +1,9 @@
 {
   "java.project.sourcePaths": [
+    "src/재귀",
     "src/문자열",
     "src/기본 수학2",
     "src/기본 수학1",
-    "src/재귀"
+    "src/브루트포스"
   ]
 }
