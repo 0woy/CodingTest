@@ -2,6 +2,7 @@
   "java.project.sourcePaths": [
     "src/정렬",
     "src/1차원 배열",
+    "src/2차원 배열",
     "src/재귀",
     "src/브루트포스",
     "src/문자열",
