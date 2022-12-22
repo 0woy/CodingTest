@@ -1,7 +1,4 @@
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.*;
 
 public class N_11650 {
@@ -37,10 +34,9 @@ public class N_11650 {
          * });
          */
 
-        StringBuilder sb = new StringBuilder();
+        System.out.println();
         for (int i = 0; i < n; i++) {
-            sb.append(point[i][0]).append(" ").append(point[i][1]).append('\n');
-            System.out.println(sb.toString());
+            System.out.println(point[i][0] + " " + point[i][1]);
         }
 
     }
