@@ -2,23 +2,25 @@ package String;
 
 public class 이진_변환_반복하기 {
     class Solution {
+        private int countZero(String s){
+            int zero =0;
+            for( char c : s.toCharArray()){
+                if(c == '0') zero++;
+            }
+            return zero;
+        }
         public int[] solution(String s) {
-            StringBuilder sb;
             int z_count =0;
             int count =0;
-            while(true){
+            while(!s.equals("1")){
+                int zeros = countZero(s);
                 count++;
-                sb= new StringBuilder();
-                for(int i=0;i<s.length();i++){
-                    if(s.charAt(i)=='0') z_count++;
-                    else sb.append(1);
-                }
-                if(sb.length()==1) break;
-                s = Integer.toString(sb.length(),2);
+                z_count += zeros;
+                int one = s.length() - zeros;
+                s=  Integer.toString(one, 2);
             }
 
-            int[] answer = {count,z_count};
-            return answer;
+            return new int[]{count,z_count};
         }
     }
 }
