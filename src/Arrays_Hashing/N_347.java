@@ -21,6 +21,7 @@ k is in the range [1, the number of unique elements in the array].
 It is guaranteed that the answer is unique.
  */
 public class N_347 {
+    /*
     public static void main(String[] args) {
         int [] nums = new int[]{5,2,5,3,5,3,1,1,3};
         int k=2;
@@ -71,5 +72,39 @@ public class N_347 {
 
         for(int res : ans)
             System.out.print(res+" ");
+    }
+    */
+    public static void main(String[] args) {
+        int [] nums = new int[]{5,2,5,3,5,3,1,1,3};
+        int k=2;
+
+        Map<Integer, Integer> map = new HashMap<>();
+        List<Integer>[] bucket = new List[nums.length+1];
+        int [] answer = new int[k];
+
+        for(int num: nums){
+            map.put(num, map.getOrDefault(num,0)+1);
+        }
+        for(int key : map.keySet()){
+            int count = map.get(key);
+            if(bucket[count]==null){
+                bucket[count] = new ArrayList<>();
+            }
+            bucket[count].add(key);
+        }
+        int idx =0;
+        for(int i=bucket.length-1;i>=0;i--){
+            if(bucket[i]!=null){
+                for(int j=0;j<bucket[i].size() && idx < k;j++){
+                    answer[idx] = bucket[i].get(j);
+                    idx++;
+                }
+            }
+        }
+
+        for(int i: answer)
+            System.out.print(i+" ");
+        // return answer;
+
     }
 }
