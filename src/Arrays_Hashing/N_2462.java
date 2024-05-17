@@ -100,6 +100,7 @@ public class N_2462 {
         }
     }
     */
+    /*
     public static Deque<Integer> que;
     public static LinkedList<Integer> addQue(LinkedList<Integer>tmp, int candidates, boolean isFront){
         while(tmp.size()<candidates && !que.isEmpty() ){
@@ -177,4 +178,33 @@ public class N_2462 {
     }
 
       */
+    public static void main(String[] args) {
+        int [] costs = new int[]{50,80,34,9,86,20,67,94,65,82,40,79,74,92,84,37,19,16,85,20,79,25,89,55,67,84,3,79,38,16,44,2,54,58};
+        int k = 20;
+        int candidates = 12;
+        PriorityQueue<Integer> pq1 = new PriorityQueue<>();
+        PriorityQueue<Integer> pq2 = new PriorityQueue<>();
+        int front =0;
+        int end =costs.length-1;
+        long sum =0;
+        while(k-- >0){
+            while(pq1.size()<candidates && front<=end){
+                pq1.offer(costs[front++]);
+            }
+            while (pq2.size()<candidates&&front<=end){
+                pq2.offer(costs[end--]);
+            }
+            int v1 = pq1.size()>0?pq1.peek():Integer.MAX_VALUE;
+            int v2 = pq2.size()>0?pq2.peek():Integer.MAX_VALUE;
+            if(v1<=v2){
+                sum+=v1;
+                pq1.poll();
+            }
+            else{
+                sum+=v2;
+                pq2.poll();
+            }
+        }
+        System.out.println(sum);
+    }
 }
