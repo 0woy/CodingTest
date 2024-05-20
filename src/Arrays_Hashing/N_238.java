@@ -25,38 +25,30 @@ public class N_238 {
         }
     }
     public static void main(String[] args) {
-        int [] nums = new int []{0,0};
+        int [] nums = new int []{1,2,3,4};
         int [] result = new int[nums.length];
-        List<Integer> zeroIdx = new ArrayList<>();
-
-        boolean isZero = false;
-        int total =1;
-
-        for(int i=0;i<nums.length;i++){
-            int val = nums[i];
-            if(val==0){
-                isZero = true;
-                zeroIdx.add(i);
-
-                if(zeroIdx.size()>1){
-                    printArr(result);
-                    return;
-                }
+        int zeroCount =0;
+        for(int val: nums){
+            if(val ==0) zeroCount++;
+            if(zeroCount>1){
+                printArr(result);
+                return;
             }
-            else{   total *= val;   }
-        }
-        if(isZero){
-            result[zeroIdx.get(0)] = total;
-            printArr(result);
-            return;
         }
 
+        int cur =1;
         for(int i=0;i<nums.length;i++){
-            int div = nums[i];
-            result[i] = total/div;
+            result[i]=1;
+            result[i]*=cur;
+            cur *=nums[i];
+        }
+
+        cur =1;
+        for(int i=nums.length-1;i>=0;i--){
+            result[i]*=cur;
+            cur *=nums[i];
         }
         printArr(result);
         return;
-
     }
 }
