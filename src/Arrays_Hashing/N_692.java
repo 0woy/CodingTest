@@ -1,4 +1,4 @@
-package Stack;
+package Arrays_Hashing;
 
 import java.util.*;
 
