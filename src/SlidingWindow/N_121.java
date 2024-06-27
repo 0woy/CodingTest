@@ -3,22 +3,16 @@ package SlidingWindow;
 public class N_121 {
     public static void main(String[] args) {
         int[] prices =  new int[]{7,3,2,5,6,1,4};
-        int stock = 0;
-        int min = prices[0];
-        int max = -1;
+        int maxStock =0;
+        int buyPrice = prices[0];
         for(int i=1;i<prices.length;i++){
-            if(prices[i]<min){
-                min  = prices[i];
-                max = -1;
-                continue;
+            if(buyPrice<prices[i]){
+                maxStock = Math.max(prices[i]-buyPrice, maxStock);
             }
-            if(max < prices[i]){
-                max = prices[i];
-            }
-            if(max != -1){
-                stock = stock<max-min?max-min:stock;
+            else{
+                buyPrice = prices[i];
             }
         }
-        System.out.println(stock);
+        System.out.println(maxStock);
     }
 }
