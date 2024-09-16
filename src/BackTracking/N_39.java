@@ -48,8 +48,8 @@ public class N_39 {
             }
             for(int i=start;i<candidates.length;i++){
                 int cur = candidates[i];
-                if(target-cur==1 || target-cur<0){
-                    continue;
+                if(target-cur<0){
+                    break;
                 }
                 comb.add(cur);
                 combination(candidates, target-cur,i, comb);
@@ -59,6 +59,7 @@ public class N_39 {
         public  static List<List<Integer>> combinationSum(int[] candidates, int target) {
             result = new ArrayList<>();
             if(target==1){ return result;}
+            Arrays.sort(candidates);
             combination(candidates, target, 0,new ArrayList<>());
             System.out.println(result.toString());
             return result;
