@@ -1,8 +1,9 @@
 import java.io.*;
+import java.time.Period;
 import java.util.*;
 
 public class N_11650 {
-
+    /** Previous Solve
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
@@ -32,7 +33,7 @@ public class N_11650 {
          * return o1[0] - o2[0];
          * }
          * });
-         */
+
 
         System.out.println();
         for (int i = 0; i < n; i++) {
@@ -41,4 +42,42 @@ public class N_11650 {
 
     }
 
+}
+*/
+    static class Position{
+        int x;
+        int y;
+        public Position(int x, int y){
+            this.x=x;
+            this.y=y;
+        }
+    }
+    public static void main(String[] args) throws IOException{
+        BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
+        int n  =Integer.parseInt(br.readLine());
+        StringTokenizer st;
+        List<Position> positions= new ArrayList<>();
+        for(int i=0;i<n;i++){
+            st = new StringTokenizer(br.readLine());
+            int x = Integer.parseInt(st.nextToken());
+            int y = Integer.parseInt(st.nextToken());
+            positions.add(new Position(x,y));
+        }
+        Collections.sort(positions, new Comparator<Position>() {
+            @Override
+            public int compare(Position o1, Position o2) {
+                if(o1.x==o2.x){
+                    return o1.y-o2.y;
+                }
+                else
+                    return o1.x-o2.x;
+            }
+        });
+        for(Position p : positions){
+            System.out.println(p.x+" "+p.y);
+        }
+
+
+
+    }
 }
