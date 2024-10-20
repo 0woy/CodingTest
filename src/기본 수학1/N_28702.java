@@ -11,17 +11,7 @@ public class N_28702 {
             String cur = br.readLine();
             str[i] = cur;
             if(str[i].replaceAll("[0-9]","").equals("")){
-                switch (i){
-                    case 0:
-                        next=Integer.parseInt(str[i])+3;
-                        break;
-                    case 1:
-                        next = Integer.parseInt(str[i])+2;
-                        break;
-                    case 2:
-                        next = Integer.parseInt(str[i])+1;
-                        break;
-                }
+                next = Integer.parseInt(str[i]) + 3-i;
             }
         }
         StringBuilder sb = new StringBuilder();
