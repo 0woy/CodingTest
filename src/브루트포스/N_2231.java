@@ -1,8 +1,10 @@
+import java.awt.image.ImagingOpException;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class N_2231 {
+    /** Previous SOLVE
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -28,5 +30,23 @@ public class N_2231 {
             }
         }
 
+    }
+     */
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        for(int i=1;i<n;i++){
+            int cur = i;
+            int sum = cur;
+            while(cur !=0){
+                sum += cur%10;
+                cur/=10;
+            }
+            if(sum == n){
+                System.out.println(i);
+                return;
+            }
+        }
+        System.out.println(0);
     }
 }
