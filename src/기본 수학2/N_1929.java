@@ -1,10 +1,9 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.nio.Buffer;
 import java.util.StringTokenizer;
 
 public class N_1929 {
+    /** Previous Solve
     public static boolean[] prime;
 
     public static void main(String[] args) throws IOException {
@@ -37,5 +36,29 @@ public class N_1929 {
                 prime[j] = true;
             }
         }
+    }
+     */
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        int m = Integer.parseInt(st.nextToken());
+        int n = Integer.parseInt(st.nextToken());
+        if(m==1){m++;}
+        for(int i=m;i<=n;i++){
+            boolean p = true;
+            for(int k=2;k<=Math.sqrt(i);k++){
+                if(i%k==0){
+                    p = false;
+                    break;
+                }
+            }
+            if(p){
+                bw.write(i+"\n");
+            }
+        }
+        bw.flush();
+        bw.close();
     }
 }
