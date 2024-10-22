@@ -1,9 +1,8 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.StringTokenizer;
 
 public class N_7568 {
+    /** Previous Solve
     static int[][] person;
     static int[] rank;
 
@@ -39,5 +38,39 @@ public class N_7568 {
             sb.append(i).append(" ");
         }
         System.out.print(sb);
+    }
+     */
+    static class Person{
+        int kg, cm;
+        public Person(int kg, int cm){
+            this.kg=kg;
+            this.cm=cm;
+        }
+    }
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        Person[] p = new Person[n];
+        StringTokenizer st;
+        int idx =0;
+        while(n>0){
+            st =new StringTokenizer(br.readLine());
+            p[idx++] = new Person(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()));
+            n--;
+        }
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        for(int i=0;i<p.length;i++){
+            Person cur = p[i];
+            int count =0;
+            for(int j=0;j<p.length;j++){
+                if(cur.kg<p[j].kg&&cur.cm<p[j].cm){
+                    count++;
+                }
+            }
+            bw.write(count+1+" ");
+        }
+        bw.flush();
+        bw.close();
+
     }
 }
