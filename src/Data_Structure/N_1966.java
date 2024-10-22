@@ -1,14 +1,12 @@
 package Data_Structure;
 
-import javax.sound.sampled.Line;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.StringTokenizer;
+import com.sun.source.doctree.StartElementTree;
 
+import java.io.*;
+import java.util.*;
+import java.util.Queue;
 public class N_1966 {
+    /** Previous Solve
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
@@ -52,23 +50,84 @@ public class N_1966 {
 
                     que.remove(max_idx); // 최우선순위 문서 제거
                     if(max_idx>0) {
-                        boolean isposChange = false;
+
                         // 제거된 최우선순위 앞 문서들 차례대로 맨 뒤로 이동
                         for (int m = 0; m < max_idx; m++) {
-                            if (m == pos && !isposChange) {
-                                pos = que.size() - max_idx + pos;
-                                isposChange = true;
-                            }
                             que.addLast(que.removeFirst());  // 맨 앞 수 뒤로 이동
                         }
-                        if(!isposChange)
-                            pos = pos - max_idx-1;
+                        if (pos < max_idx) {    pos = que.size() - max_idx + pos;   }
+                        else {  pos = pos - max_idx - 1;  }
                     }
+
                     else pos-=1;
                     count++;
             }
             i++;    // 반복
         }
         System.out.print(sb);
+    }
+     */
+    static BufferedReader br;
+    static StringTokenizer st;
+    public static class Pair{
+        int pos, priority;
+        Pair(int pos, int priority){
+            this.pos=pos;
+            this.priority=priority;
+        }
+    }
+    public static void main(String[] args) throws  IOException{
+        Queue<Pair> que = new ArrayDeque<>();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringTokenizer st;
+        int tc = Integer.parseInt(br.readLine());
+        while(tc>0){
+            st = new StringTokenizer(br.readLine());
+            int len =Integer.parseInt(st.nextToken());
+            int goal =Integer.parseInt(st.nextToken());
+            PriorityQueue<Integer> pq = new PriorityQueue<>(
+                    new Comparator<Integer>() {
+                        @Override
+                        public int compare(Integer o1, Integer o2) {
+                            return o2-o1;
+                        }
+                    }
+            );
+            st = new StringTokenizer(br.readLine());
+            int idx =0;
+            while(st.hasMoreTokens()){
+                int prior = Integer.parseInt(st.nextToken());
+                    pq.add(prior);
+                que.add(new Pair(idx++, prior));
+            }
+            int count = 0;
+            int max = 0;
+            boolean isContinue = true;
+            while(!que.isEmpty()&&isContinue){
+                if(!pq.isEmpty())
+                    max = pq.poll();
+                int clen = que.size();
+                for(int i=0;i<clen;i++){
+                    if(que.peek().priority >= max){
+                        count++;
+                        if(que.poll().pos == goal){
+                            bw.write(count+"\n");
+                            isContinue=false;
+                        }
+                        break;
+
+                    }else{
+                        que.add(que.poll());
+                    }
+                }
+            }
+            que.clear();
+            pq.clear();
+            tc--;
+        }
+        bw.flush();
+        bw.close();
+
     }
 }
