@@ -1,4 +1,7 @@
 package TwoPointers;
+
+import javax.xml.stream.events.StartDocument;
+
 /**
 Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order,
  find two numbers such that they add up to a specific target number.
@@ -10,6 +13,7 @@ Given a 1-indexed array of integers numbers that is already sorted in non-decrea
  Your solution must use only constant extra space.
 */
 public class N_167 {
+    /** Previous Solve
     public static int findLastIdx(int[] numbers, int start, int end, int target){
         if(start >= end) return end;
         int halfIdx = (start+end)/2;
@@ -37,11 +41,45 @@ public class N_167 {
         }
         return null;
     }
+     */
+    public static int findLastIdx(int[] numbers, int target){
+        target-=numbers[0];
+        int start =0;
+        int end = numbers.length-1;
+        while(start<end){
+            int half = (start+end)/2;
+            if(numbers[half]==target){
+                return half;
+            }
+            if(numbers[half]<target){
+                start = half+1;
+            }else{
+                end = half-1;
+            }
+         }
+        return start;
+    }
+    public static int[] twoSum(int[] numbers, int target) {
+        int len = findLastIdx(numbers, target);
+        if(len==0) len++;
+        int start= 0;
+        while(start < len){
+            for(int i = len;i>start;i--){
+                if(numbers[start]+numbers[i]==target){
+                    return new int[]{start+1,i+1};
+                }
+                if(numbers[start]+numbers[i]<target){
+                    break;
+                }
+            }
+            start++;
+        }
+        return new int[]{};
+    }
     public static void main(String[] args) {
-        int [] numbers = new int[]{-1,-1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
+        int [] numbers = new int[]{-1,-1,1,1,1,1,1,1,1,1,1};
         int target = -2;
-        int lastIdx = findLastIdx(numbers,0,numbers.length-1,target-numbers[0]);
-        int [] res = findTwoSum(numbers,lastIdx,target);
+        int [] res = twoSum(numbers, target);
         System.out.println(res[0]+" "+res[1]);
 
     }
