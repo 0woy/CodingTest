@@ -3,8 +3,9 @@ package Data_Structure;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.StringTokenizer;
-
+/**
 class ListNode{
     private Integer data;
     public ListNode link;
@@ -106,4 +107,32 @@ public class N_1158 {
         System.out.print(sb);
 
     }
+}
+ */
+class N_1158{
+    public static void main(String[] args) throws IOException{
+        BufferedReader br  = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st =new StringTokenizer(br.readLine());
+        StringBuilder sb = new StringBuilder();
+        int n= Integer.parseInt(st.nextToken());
+        int k= Integer.parseInt(st.nextToken());
+        ArrayList<Integer> list= new ArrayList<>();
+        for(int i=1;i<=n;i++){
+            list.add(i);
+        }
+        int idx =0;
+        sb.append("<");
+        while(list.size()>1){
+            idx += k-1;
+            if(idx>=list.size()){
+                idx%=list.size();
+            }
+            sb.append(list.remove(idx)+", ");
+        }
+        sb.append(list.get(0)+">");
+
+        System.out.println(sb.toString());
+
+    }
+
 }
