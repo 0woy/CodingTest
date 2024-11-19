@@ -48,6 +48,7 @@ public class N_207 {
         }
     }
      */
+    //Khan's Algorithm
     public static boolean canFinish(int numCourses, int[][] prerequisites) {
         List<Integer>[] list =new List[numCourses];
         List<Integer> res = new ArrayList<>();
@@ -84,16 +85,10 @@ public class N_207 {
         System.out.println( res.size() == numCourses);
         return res.size() == numCourses;
     }
-
     public static void main(String[] args) {
-        int numCourses = 8;
+        int numCourses = 2;
         int [][] prerequisites = new int[][]{
-                {1,0},
-                {2,6},
-                {1,7},
-                {6,4},
-                {7,0},
-                {0,5}
+                {0,1}
         };
 
         canFinish(numCourses, prerequisites);
