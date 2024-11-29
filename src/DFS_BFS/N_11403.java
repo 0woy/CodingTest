@@ -58,6 +58,7 @@ public class N_11403 {
         }
     }
      */
+    /** bfs
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -111,4 +112,41 @@ public class N_11403 {
             }
         }
     }
+     */
+    /** Floyd-Warshall
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringTokenizer st;
+
+        int n = Integer.parseInt(br.readLine());
+        int [][] graph = new int[n][n];
+
+        for (int i = 0; i < n; i++) {
+            st = new StringTokenizer(br.readLine());
+            for(int j=0;j<n;j++){
+                graph[i][j]=Integer.parseInt(st.nextToken());
+            }
+        }
+
+        for(int k=0;k<n;k++){   // 경유지
+            for(int i=0;i<n;i++){   // 출발지  
+                for(int j=0;j<n;j++){   // 도착지
+                    if(graph[i][k]+graph[k][j]==2){
+                        graph[i][j]=1;
+                    }
+                }
+            }
+        }
+        for(int [] g: graph){
+            for(int v: g){
+                bw.write(v+" ");
+            }
+            bw.write("\n");
+        }
+        bw.flush();
+        bw.close();
+
+    }
+     */
 }
