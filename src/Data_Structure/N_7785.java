@@ -26,7 +26,6 @@ public class N_7785 {
         /** List 사용
         List<String> list=  new ArrayList<>(set);
         Collections.sort(list, Collections.reverseOrder());
-         
         for(String v: list){
             bw.write(v+"\n");
         }
