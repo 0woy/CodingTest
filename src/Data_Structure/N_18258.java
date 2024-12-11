@@ -7,8 +7,9 @@ N_18258 큐2
 package Data_Structure;
 
 import java.io.*;
-import java.util.StringTokenizer;
+import java.util.*;
 
+/**
 class Queue {
     private int front, rear, size;
     private int[] data;
@@ -93,3 +94,43 @@ public class N_18258 {
     }
 }
 
+*/
+public class N_18258{
+    public static void main(String[] args) throws IOException{
+        BufferedReader br =new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw= new BufferedWriter(new OutputStreamWriter(System.out));
+        Deque<Integer> list = new ArrayDeque<>();
+        StringTokenizer st;
+        int count =Integer.parseInt(br.readLine());
+        while(count-- > 0){
+            st = new StringTokenizer(br.readLine());
+            int res = -2;
+            switch (st.nextToken()){
+                case "push":
+                    list.add(Integer.parseInt(st.nextToken()));
+                    break;
+                case "pop":
+                    res = list.isEmpty()?-1:list.removeFirst();
+                    break;
+                case "size":
+                    res = list.size();
+                    break;
+                case "empty":
+                    res = list.isEmpty()?1:0;
+                    break;
+                case "front":
+                    res = list.isEmpty()?-1:list.getFirst();
+                    break;
+                case "back":
+                    res = list.isEmpty()?-1:list.getLast();
+                    break;
+            }
+            if(res> -2){
+                bw.write(res+"\n");
+            }
+        }
+        bw.flush();
+        bw.close();
+
+    }
+}
