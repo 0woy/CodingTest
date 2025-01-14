@@ -10,6 +10,16 @@ return an array answer such that answer[i] is the number of days
 you have to wait after the ith day to get a warmer temperature.
 If there is no future day for which this is possible, keep answer[i] == 0 instead.
  */
+class Value{
+    int value;
+    int idx;
+
+    public Value(int value, int idx){
+        this.value = value;
+        this.idx = idx;
+    }
+
+}
 public class N_739 {
     /** First Solution (ft. Value Class)
     static class Value{
@@ -62,6 +72,7 @@ public class N_739 {
         return answer;
     }
      */
+    /** Previous Solution
     public static int[] dailyTemperatures(int[] temperatures) {
         Stack<Integer> stack = new Stack<>();
         int [] answer =new int[temperatures.length];
@@ -81,5 +92,31 @@ public class N_739 {
     public static void main(String[] args) {
         dailyTemperatures(new int[]{73,74,75,71,69,72,76,73});
 
+    }
+     */
+
+    public static int[] dailyTemperatures(int[] temperatures) {
+        Stack<Integer> stack = new Stack<>();
+        int[] res = new int[temperatures.length];
+
+        for(int i=0;i<temperatures.length;i++){
+            int cur = temperatures[i];
+            while (!stack.isEmpty() && cur>temperatures[stack.peek()]){
+                int idx = stack.pop();
+                res[idx] = i-idx;
+            }
+            stack.push(i);
+        }
+        while (!stack.isEmpty()){
+            res[stack.pop()] = 0;
+        }
+        for(int v: res){
+            System.out.print(v+" ");
+        }
+        return res;
+    }
+    public static void main(String[] args) {
+        int [] temperatiure =new int[]{73,74,75,71,69,72,76,73};
+        dailyTemperatures(temperatiure);
     }
 }
