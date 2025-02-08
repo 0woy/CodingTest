@@ -15,6 +15,7 @@ public class N_20115 {
         float total = 0;
         for(int i=0;i<n;i++){
             int cur = Integer.parseInt(st.nextToken());
+
             if(max < cur){ max =cur;}
             total+=cur;
         }
