@@ -1,6 +1,7 @@
 package BinarySearch;
 
 public class N_153 {
+    /** Previous Solve
     private static int min;
     public static boolean checkIsMin(int [] nums, int idx){
         if(idx == nums.length-1||idx == 0) return false;
@@ -30,7 +31,23 @@ public class N_153 {
         }
         int res = binarySearch(nums,0,nums.length-1);
         System.out.println(res);
-
-
     }
-}
+    */
+    public static int findMin(int[] nums) {
+            int left = 0, right = nums.length - 1;
+            while (left < right) {
+                int half = left+(right-left)/2;
+                if(nums[half]<nums[right]){     // front
+                    right=half;
+                }else{
+                    left=half+1;
+                }
+            }
+            return nums[left];
+    }
+        public static void main(String[] args) {
+            int [] nums = new int[]{1,2};
+            System.out.println(findMin(nums));
+        }
+    }
+
