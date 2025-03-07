@@ -30,7 +30,7 @@ public class N_4963 {
             int count = 0;
             while (!land.isEmpty()) {
                 int [] next = land.poll();
-                if(map[next[0]][next[1]]==1){
+                if(map[next[0]][next[11]]==1){
                     count++;
                     bfs(next[0],next[1]);
                 }
