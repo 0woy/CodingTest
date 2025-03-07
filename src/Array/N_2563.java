@@ -1,10 +1,14 @@
+package Array;
+
 import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class N_2563 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int[][] box = new box[100][100];
+        int[][] box = new int[100][100];
         int N = Integer.parseInt(br.readLine());
         StringTokenizer st;
         int[][] rec = new int[N][2];
