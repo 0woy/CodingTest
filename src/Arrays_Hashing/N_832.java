@@ -1,6 +1,7 @@
 package Arrays_Hashing;
 
 public class N_832 {
+    /** My Solve
     public static int[][] flipAndInvertImage(int[][] image) {
         boolean isOdd = image.length % 2 == 1;
         for(int [] row : image){
@@ -12,6 +13,22 @@ public class N_832 {
 
             if(isOdd){
                 row[image.length/2]=row[image.length/2]==1?0:1;
+            }
+        }
+        return image;
+    }
+     */
+    public static int[][] flipAndInvertImage(int[][] image) {
+        boolean isOdd = image.length % 2 == 1;
+        for(int [] row : image){
+            for(int i=0;i<row.length/2;i++){
+                int tmp =row[image.length-i-1] ^ 1;
+                row[image.length-i-1] = row[i]^1;
+                row[i]=tmp;
+            }
+
+            if(isOdd){
+                row[image.length/2]^=1;
             }
         }
         return image;
