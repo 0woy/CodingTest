@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="35d928e1-5b6f-4728-98d9-6bdc043be111" name="Changes" comment="Top K Frequent Words (ft. 3 solution)">
+      <change afterPath="$PROJECT_DIR$/src/DFS_BFS/N_200.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Stack/N_692.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Arrays_Hashing/N_692.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2eIbCRn5u2LFStPYqoIV3pe5myP" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Spring/MustHaveJSP&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Application.N_200">
+    <configuration name="N_108" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LinkedList.N_108" />
+      <module name="LeetCode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="LinkedList.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="N_128" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Arrays_Hashing.N_128" />
+      <module name="LeetCode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Arrays_Hashing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="N_20" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Stack.N_20" />
+      <module name="LeetCode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Arrays_Hashing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="N_200" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DFS_BFS.N_200" />
+      <module name="LeetCode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="DFS_BFS.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="N_692" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Arrays_Hashing.N_692" />
+      <module name="LeetCode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Arrays_Hashing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.N_200" />
+        <item itemvalue="Application.N_692" />
+        <item itemvalue="Application.N_20" />
+        <item itemvalue="Application.N_108" />
+        <item itemvalue="Application.N_128" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="35d928e1-5b6f-4728-98d9-6bdc043be111" name="Changes" comment="" />
+      <created>1711594913597</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1711594913597</updated>
+      <workItem from="1711594914891" duration="5005000" />
+      <workItem from="1711612091756" duration="38000" />
+      <workItem from="1715054752717" duration="3467000" />
+      <workItem from="1715060071669" duration="3806000" />
+      <workItem from="1715263706551" duration="4462000" />
+      <workItem from="1715322487193" duration="4586000" />
+      <workItem from="1715415575464" duration="3335000" />
+      <workItem from="1715486389693" duration="1380000" />
+      <workItem from="1715498390052" duration="2278000" />
+      <workItem from="1715511667650" duration="871000" />
+      <workItem from="1715519459095" duration="7370000" />
+      <workItem from="1715580830751" duration="5405000" />
+      <workItem from="1715611060079" duration="3371000" />
+      <workItem from="1715653920579" duration="2967000" />
+      <workItem from="1715781073017" duration="4082000" />
+      <workItem from="1715833374790" duration="10141000" />
+      <workItem from="1715920662803" duration="3340000" />
+      <workItem from="1716095165376" duration="508000" />
+      <workItem from="1716183419597" duration="3928000" />
+      <workItem from="1716192070670" duration="957000" />
+      <workItem from="1716216629834" duration="2713000" />
+      <workItem from="1716262979990" duration="1855000" />
+      <workItem from="1716297829926" duration="4000" />
+      <workItem from="1716566876613" duration="523000" />
+      <workItem from="1716701806762" duration="8120000" />
+      <workItem from="1716714272155" duration="28000" />
+      <workItem from="1716786834771" duration="269000" />
+      <workItem from="1716873200551" duration="1320000" />
+      <workItem from="1716949383672" duration="14000" />
+      <workItem from="1716992091362" duration="5936000" />
+      <workItem from="1717042467501" duration="1974000" />
+    </task>
+    <task id="LOCAL-00001" summary="Subsets, 중복X &amp; 모든 부분집합 구하기">
+      <created>1711597031240</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1711597031240</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Contains Duplicate (ft. HashMap)">
+      <created>1715056431922</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1715056431923</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Valid Anagram (ft. HashMap, KeySet)">
+      <created>1715057968090</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715057968090</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Two Sum">
+      <created>1715267598276</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715267598276</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Group Anagrams (ft. Wrong ANS, ASCII CODE)">
+      <created>1715324927982</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1715324927982</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Group Anagrams (ft. map)">
+      <created>1715419004032</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1715419004033</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add Two Numbers (ft. Math..ㅠㅠ)">
+      <created>1715505713807</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1715505713807</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Zigzag Conversion (ft. Wrong ans)">
+      <created>1715526263412</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1715526263412</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Zigzag Conversion (ft. ArrayList)">
+      <created>1715584005199</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1715584005199</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Top K Frequent Elements (ft. HashSet, HashMap)">
+      <created>1715655308516</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1715655308516</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Top K Frequent Elements (ft. Improved)">
+      <created>1715656311118</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1715656311118</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Total Cost to Hire K Workers (ft. TimeLimit)">
+      <created>1715921846049</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1715921846049</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Total Cost to Hire K Workers (ft. Priority Queue)">
+      <created>1715924733907</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1715924733907</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Product of Array Except Self">
+      <created>1716185388677</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1716185388677</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Product of Array Except Self (ft. prefix, suffix)">
+      <created>1716187328925</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1716187328925</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Climbing Stairs (ft. DP)">
+      <created>1716217169421</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1716217169421</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Longest Consecutive Sequence (ft. O(n log n))">
+      <created>1716220011003</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1716220011003</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Convert Sorted Array to BST (ft. AVL Tree)">
+      <created>1716709974136</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1716709974136</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Valid Parentheses">
+      <created>1716874519956</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1716874519956</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Top K Frequent Words (ft. Map, List)">
+      <created>1716993957815</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1716993957815</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Top K Frequent Words (ft. 3 solution)">
+      <created>1716998028996</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1716998028996</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Subsets, 중복X &amp; 모든 부분집합 구하기" />
+    <MESSAGE value="Contains Duplicate (ft. HashMap)" />
+    <MESSAGE value="Valid Anagram (ft. HashMap, KeySet)" />
+    <MESSAGE value="Two Sum" />
+    <MESSAGE value="Group Anagrams (ft. Wrong ANS, ASCII CODE)" />
+    <MESSAGE value="Group Anagrams (ft. map)" />
+    <MESSAGE value="Add Two Numbers (ft. Math..ㅠㅠ)" />
+    <MESSAGE value="Zigzag Conversion (ft. Wrong ans)" />
+    <MESSAGE value="Zigzag Conversion (ft. ArrayList)" />
+    <MESSAGE value="Top K Frequent Elements (ft. HashSet, HashMap)" />
+    <MESSAGE value="Top K Frequent Elements (ft. Improved)" />
+    <MESSAGE value="LRU Cache (ft. LinkedHashMap)" />
+    <MESSAGE value="Total Cost to Hire K Workers (ft. TimeLimit)" />
+    <MESSAGE value="Total Cost to Hire K Workers (ft. Priority Queue)" />
+    <MESSAGE value="Product of Array Except Self" />
+    <MESSAGE value="Product of Array Except Self (ft. prefix, suffix)" />
+    <MESSAGE value="Climbing Stairs (ft. DP)" />
+    <MESSAGE value="Longest Consecutive Sequence (ft. O(n log n))" />
+    <MESSAGE value="Convert Sorted Array to BST (ft. AVL Tree)" />
+    <MESSAGE value="Valid Parentheses" />
+    <MESSAGE value="Top K Frequent Words (ft. Map, List)" />
+    <MESSAGE value="Top K Frequent Words (ft. 3 solution)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Top K Frequent Words (ft. 3 solution)" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/BackTracking/N40_CombinationSum2.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Arrays_Hashing/N_1.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Arrays_Hashing/N_49.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Arrays_Hashing/N_347.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Arrays_Hashing/N_347.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/LinkedList/N_146.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Arrays_Hashing/N_2462.java</url>
+          <line>131</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Arrays_Hashing/N_2462.java</url>
+          <line>188</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Arrays_Hashing/N_2462.java</url>
+          <line>181</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Arrays_Hashing/N_128.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/LinkedList/N_108.java</url>
+          <line>103</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Stack/N_20.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/DFS_BFS/N_200.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
