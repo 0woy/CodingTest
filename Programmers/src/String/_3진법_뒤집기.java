@@ -1,7 +1,9 @@
 package String;
 
+import java.util.ArrayList;
+import java.util.*;
+
 public class _3진법_뒤집기 {
-    import java.util.*;
     class Solution {
         public int solution(int n) {
             String str = Integer.toString(n,3);
