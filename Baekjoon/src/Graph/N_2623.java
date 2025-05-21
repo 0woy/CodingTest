@@ -90,7 +90,6 @@ public class N_2623 {
     }
 
     public static void que_tps(int cur, int[]degree, List<Integer>[] graph, Queue<Integer> que) {
-        que.offer(cur);
         while (!que.isEmpty()) {
             int next = que.poll();
             visited[next] = true;
