@@ -7,6 +7,7 @@ import java.util.Queue;
 
 public class Solution {
     static int[] root;
+    static int[] rank;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
@@ -19,6 +20,7 @@ public class Solution {
             int n = val[0];
             int m = val[1];
             root = new int[n+1];
+            rank = new int[n+1];
             for(int i=0;i<=n;i++){
                 root[i]=i;
             }
@@ -43,9 +45,15 @@ public class Solution {
     static void union(int a, int b){
         int root_a = find(a);
         int root_b = find(b);
+        if(root_a == root_b) return;
 
-        if(root_a!=root_b){
+        if(rank[root_a] > rank[root_b]){
             root[root_b]=root_a;
+        }else if(rank[root_a] < rank[root_b]){
+            root[root_a]=root_b;
+        }else{
+            root[root_b]=root_a;
+            rank[root_a]++;
         }
     }
     static int find(int v){
