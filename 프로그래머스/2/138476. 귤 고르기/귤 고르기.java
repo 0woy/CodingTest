@@ -5,17 +5,13 @@ class Solution {
         for(int v : tangerine){
             map.put(v, map.getOrDefault(v,0)+1);
         }
-        PriorityQueue<Map.Entry<Integer, Integer>> pq = 
-            new PriorityQueue<>((o1, o2) ->{
-                if(o2.getValue()==o1.getValue()){
-                    return o1.getKey()-o2.getKey();
-                }
-                return Integer.compare(o2.getValue(),o1.getValue());
-            });
-        pq.addAll(map.entrySet());
+        List<Integer> list = new ArrayList<>(map.values());
+        Collections.sort(list, (a,b) ->{
+            return Integer.compare(b,a);
+        });
         int count = 0;
         while(k>0){
-            k -= pq.poll().getValue();
+            k-= list.remove(0);
             count++;
         }
         return count;
