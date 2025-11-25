@@ -10,7 +10,6 @@ class Solution {
         int [][] cnt = new int[n][n];
         int[] give =new int[n];
         int[] take =new int[n];
-        
         for(String gift : gifts){
             String [] list =gift.split(" ");
             
