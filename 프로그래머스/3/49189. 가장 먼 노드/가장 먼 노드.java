@@ -12,12 +12,12 @@ class Solution {
             list[a].add(b);
             list[b].add(a);
         }
-        bfs(1, list);
-        Integer maxKey = Collections.max(map.keySet());
+        int maxKey = bfs(1, list);
         return map.get(maxKey);
     }
     
-    static void bfs(int start, List<Integer>[] list){
+    static int bfs(int start, List<Integer>[] list){
+        int max = 0;
         Queue<int[]> que = new ArrayDeque<>();
         boolean [] visited = new boolean[list.length];
         que.offer(new int[]{start, 0});
@@ -29,11 +29,13 @@ class Solution {
             for(int v: list[node]){
                 if(!visited[v]){
                     visited[v]=true;
+                    max = Math.max(max, depth+1);
                     que.offer(new int[]{v, depth+1});              
                     map.put(depth+1, map.getOrDefault(depth+1, 0)+1);
                 }
             }
         }
+        return max;
     }
 }
 
