@@ -4,11 +4,11 @@ import java.io.InputStreamReader;
 import java.nio.Buffer;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class Main {
-    static long[] arr;
-    static int idx;
+    static List<Long> arr;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
@@ -16,16 +16,15 @@ public class Main {
             System.out.println(-1);
             return;
         }
-        idx = 0;
-        arr = new long[1023];
+        arr = new ArrayList<>();
         for(int i=0;i<=9;i++){
             recur(i, i);
         }
-        Arrays.sort(arr);
-        System.out.println(arr[n]);
+        Collections.sort(arr);
+        System.out.println(arr.get(n));
     }
     static void recur(long num, int lastDigit){
-        arr[idx++] = num;
+        arr.add(num);
         for(int i =0;i<lastDigit;i++){
             recur(num*10+i, i);
         }
