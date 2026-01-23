@@ -1,25 +1,26 @@
 import java.util.*;
-
 class Solution {
     public int[] solution(String[] gems) {
-        int totalSize = new HashSet<>(Arrays.asList(gems)).size();
-        int [] answer = new int[2];
+        int total = new HashSet<>(Arrays.asList(gems)).size();
         Map<String, Integer> map = new HashMap<>();
-        int min = Integer.MAX_VALUE;
-        int left =0;
-        for(int right=0;right<gems.length;right++){
-            map.put(gems[right], map.getOrDefault(gems[right],0)+1);
-            while(map.size() == totalSize && left < gems.length){                
-                int len = (right-left);
-                if(len < min){
-                    min = len;   
-                    answer[0]=left+1;
-                    answer[1]=right+1;
+        
+        int minLen = Integer.MAX_VALUE;
+        int l=0;
+        int[] answer = new int[2];
+        
+        for(int r=0;r<gems.length;r++){
+            map.put(gems[r], map.getOrDefault(gems[r],0)+1);
+            
+            while(map.size()==total){
+                if(minLen > (r-l)){
+                    minLen = r-l;
+                    answer[0]=l+1;
+                    answer[1]=r+1;
                 }
-                map.put(gems[left], map.get(gems[left])-1);
-                if(map.get(gems[left])==0) map.remove(gems[left]);
-                left++;
-            }            
+                map.put(gems[l], map.get(gems[l])-1);
+                if(map.get(gems[l])==0) map.remove(gems[l]);
+                l++;
+            }
         }
         return answer;
     }
