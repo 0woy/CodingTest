@@ -2,52 +2,58 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayDeque;
+import java.util.List;
 import java.util.Queue;
+import java.util.StringTokenizer;
 
 public class Solution {
+    static StringTokenizer st;
+    static BufferedReader br;
+    static int[][] map;
+    static int answer = 0;
+    static int[] dx = {0, 0, -1};   // l,r, up
+    static int[] dy = {-1, 1, 0};
 
-    static int[] dx = {0, 0, -1};
-    static int[] dy = {1, -1, 0};
-    static int res;
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
         for (int t = 1; t <= 10; t++) {
-            res = -1;
-            sb.append("#" + br.readLine() + " ");
-            int[][] map = new int[100][100];
+            sb.append("#").append(t).append(" ");
+            br.readLine();
+            map = new int[100][100];
+            int x = 0;
+            int y = 0;
             for (int i = 0; i < 100; i++) {
                 int j = 0;
-                for (String s : br.readLine().split(" ")) {
-                    map[i][j++] = Integer.parseInt(s);
+                st = new StringTokenizer(br.readLine());
+                while (st.hasMoreTokens()) {
+                    map[i][j] = Integer.parseInt(st.nextToken());
+                    if (map[i][j] == 2) {
+                        x = i;
+                        y = j;
+                    }
+                    j++;
                 }
             }
-            for (int i = 0; i < 100; i++) {
-                if (map[99][i] == 2) {
-                    dfs(map, 98, i);
-                    sb.append(res + "\n");
-                    break;
-                }
-            }
+            dfs(x, y);
+            sb.append(answer).append("\n");
         }
         System.out.println(sb);
     }
 
-    static void dfs(int[][] map, int row, int col) {
-        if (row == 0) {
-            res = col;
-            return;
+    static boolean dfs(int x, int y) {
+        if (x == 0) {
+            answer = y;
+            return true;
         }
         for (int d = 0; d < 3; d++) {
-            int nx = row + dx[d];
-            int ny = col + dy[d];
-            if (nx < 0 || ny < 0 || nx >= map.length || ny >= map.length) continue;
-            if (map[nx][ny] == 1) {
-                map[nx][ny] = 0;
-                dfs(map, nx, ny);
-                if(res != -1) return;
+            int nx = x + dx[d];
+            int ny = y + dy[d];
+            if (nx >= 0 && ny >= 0 && nx < 100 && ny < 100 && map[nx][ny] == 1) {
+                map[nx][ny]=0;
+                if(dfs(nx, ny)) return true;
             }
         }
+        return false;
     }
 }
-
