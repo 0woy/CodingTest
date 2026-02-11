@@ -24,43 +24,26 @@ public class Solution{
                     j++;
                 }
             }
-
-            int minus = 0;
+            
             int len = n / 2;
+            int [] points = {0,n-1};
+            for(int x: points){
+                for(int y:points){
+                    int iStart = (x==0)?0:n-len;
+                    int iEnd = (x==0)?len:n;
+                    int jStart = (y==0)?0:n-len;
+                    int jEnd = (y==0)?len:n;
 
-            int x = 0, y = 0;
-            for (int i = 0; i < len; i++) {
-                for (int j = 0; j < len; j++) {
-                    if (Math.abs(i - x) + Math.abs(j - y) < len) minus += map[i][j];
+                    for(int i=iStart;i<iEnd;i++){
+                        for(int j=jStart;j<jEnd;j++){
+                            if(Math.abs(i-x)+Math.abs(j-y)<len) total-=map[i][j];
+                        }
+                    }
                 }
             }
-            x = 0;
-            y = n - 1;
-            for (int i = 0; i < len; i++) {
-                for (int j = len + 1; j < n; j++) {
-                    if (Math.abs(i - x) + Math.abs(j - y) < len) minus += map[i][j];
-                }
-            }
-
-            x = n-1;
-            y =0;
-            for (int i = len+1; i < n; i++) {
-                for (int j = 0; j < len; j++) {
-                    if (Math.abs(i - x) + Math.abs(j - y) < len) minus += map[i][j];
-                }
-            }
-
-            x = n-1;
-            y =n-1;
-            for (int i = len+1; i < n; i++) {
-                for (int j = len+1; j < n; j++) {
-                    if (Math.abs(i - x) + Math.abs(j - y) < len) minus += map[i][j];
-                }
-            }
-
-            sb.append(total-minus).append("\n");
-
+            sb.append(total).append("\n");
         }
         System.out.println(sb);
     }
+
 }
