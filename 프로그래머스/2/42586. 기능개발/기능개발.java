@@ -12,11 +12,9 @@ class Solution {
             int prev = stack.removeFirst();
             int rest = 100-prev;
             int days = rest/speeds[i]+((rest%speeds[i]>0)?1:0);
-            System.out.println("days: "+days+", prev: "+prev);
             i++;
             while(!stack.isEmpty() && stack.peekFirst()+speeds[i]*days >=100){
                 int tmp = stack.remove();
-                System.out.println("제거: "+tmp);
                 i++;
                 count++;
             }
