@@ -1,63 +1,31 @@
 import java.util.*;
+
 class Solution {
-    static class Work{
-        int reqt, idx, ndt;
-        public Work(int i, int r, int u){
-            reqt =r;
-            idx=i;
-            ndt =u;
-        }
-
-    }
     public int solution(int[][] jobs) {
-        int n = jobs.length;
-        Work[] works = new Work[n];
-        for(int i=0;i<n;i++){
-            works[i] = new Work(i, jobs[i][0],jobs[i][1]);
-        }
-        Arrays.sort(works, (a,b)->a.reqt-b.reqt);
-
-        PriorityQueue<Work> pq = new PriorityQueue<>((a,b) ->{
-            if(a.ndt == b.ndt){
-                if(a.reqt==b.reqt) return a.idx-b.idx;
-                return a.reqt - b.reqt;
-            }   
-            return a.ndt -b.ndt;
-        });
+        Arrays.sort(jobs, (a,b) -> a[0]-b[0]);   // 요청시간 정렬
         
-        int time =works[0].reqt;
-        int i =1;
-        int tt =0;
-        pq.offer(works[0]);
-        while(i<n || !pq.isEmpty()){
-            while(i<n && time >= works[i].reqt) pq.offer(works[i++]);
-            if(!pq.isEmpty()){
-                Work cur = pq.poll();
-                tt += time+cur.ndt-cur.reqt;
-                time = time+cur.ndt;
+        PriorityQueue<int[]> pq= new PriorityQueue<>((a,b)-> a[1]-b[1]); // 소요 시간 정렬
+        
+        int turnAroundTime =0;
+        int curTime=0;
+        int jobIdx =0;
+        int count=0;
+        int n= jobs.length;
+        
+        while(count < n){
+            while(jobIdx < n && jobs[jobIdx][0] <= curTime){
+                pq.offer(jobs[jobIdx++]);
+            }
+            if(pq.isEmpty()){
+                curTime = jobs[jobIdx][0];   // 시간 점프
             }else{
-                time =works[i].reqt;
+                int [] job = pq.poll();
+                turnAroundTime += curTime+job[1]-job[0];
+                
+                curTime += job[1];  // 현재 시간 update
+                count++;
             }
         }
-        
-        return tt/n;
+            return turnAroundTime/n;
     }
 }
-/**
-reqt, ust
-priority: ust, reqt, idx asc
-endt == reqt,
-1. add que (reqt)
-2. priority calc
-
-tt = reqt~endt = endt-reqt
-job: idx, reqt, ndt
-
-pq add: reqt, ndt, idx;
-init time = pq.poll.reqt
-
-time = endt
-while(time = jobs.reqt) pq.add(job)
-calc
-
-*/
